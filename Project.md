@@ -11,68 +11,49 @@
 ## Circuit Block Diagram 
 
  
+<img src="Blockdiag.png" alt="Block Diagram" height="550" width="750"/>
 
-Block Diagram
-
-<img src="block" alt="Block Diagram" width="550"/>
-
-
-
- 
-The Temperature sensor module consists of one resistor and one  LM35 as a temperature sensor.
-<img src="images/LM35.png" alt="Tiva" height="350" width="550"/>
-
-    LM35 has three pins:
-
-    PIN 1 : Vcc, it is the input pin (5v)
-
-    PIN 2 : Vout, we get output (it should be connected to the analog pin microcontroller)
-
-    PIN 3 : GND, it is used for ground
-
-    Features: 
-    • Calibrated Directly in Celsius (Centigrade)
-    • Linear + 10-mV/°C Scale Factor
-    • 0.5°C Ensured Accuracy (at 25°C)
-    • Rated for Full −55°C to 150°C Range
-    • Suitable for Remote Applications
-    • Low-Cost Due to Wafer-Level Trimming
-    • Operates From 4 V to 30 V
-    • Less Than 60-μA Current Drain
-    • Low Self-Heating, 0.08°C in Still Air
-    • Non-Linearity Only ±¼°C Typical
-    • Low-Impedance Output, 0.1 Ω for 1-mA Load
- 
-TIVA Microcontroller
-
-
-<img src="images/Tiva.jpeg" alt="Tiva" width="550"/>
-
-
-BJT
-
-
-<img src="images/BJT 2N3055.jpeg" alt="Tiva" width="550"/>
-
-<img src="images/BJT Pins.jpeg" alt="Tiva" width="550"/>
     
     
     
-## Circuit Diagram
-<img src="images/Ckt Diag.jpeg" alt="Tiva" width="750"/>
+## Sub Circuit 
+S/H Circuit
 
-## Circuit Implementation
-<img src="images/Ckt implementation.jpeg" alt="Tiva" width="750"/>
+<img src="Transmission Gate.png" alt="S/H Circuit" height="450" width="550"/>
 
-## PWM Signal
-<img src="images/PWM.jpeg" alt="Tiva" width="750"/>
+3 bit ADC
 
-## PWM Max Duty Cycle
-<img src="images/PWM Max.jpeg" alt="Tiva" width="750"/>
+<img src="3bitADC.png" alt="3bitADC" height="450" width="550"/>
 
-## PWM Min Duty Cycle
-<img src="images/PWM Min.jpeg" alt="Tiva" width="750"/>
+3 bit DAC
 
+<img src="3bitDAC.png" alt="3bitDAC" height="450" width="550"/>
+
+
+
+##Challenges 
+
+            S/H Circuit
+            
+            First the s/h circuit we used was the bottom plate sampling, the problem we faced while using the bottom plate sampling was the output we got was 
+
+            After replacing bottom plate sampling ckt with the transmission gate, at the output, the capacitor was charging slowly when the capacitor of 1u F was connected and there were errors when the
+            1f F was connected.
+
+            3 Bit ADC
+
+            3 Bit DAC
+
+            The voltage we got at the nodes was not the same as expected. The problem with our circuit was the mos resistance due to which the division of voltage was not proper, the expected division 
+            was Vref/2 , Vref/4 , Vref/8.This problem was rectified by replacing the pmos with nmos and conntecting intvertor to the gate of nmos and its source is connected to ground. So that when the 
+            input 0 is given to dac inverted nmos will be turned on and it will be shorted to ground.
+
+            
+
+            
+
+
+            
 
 
 
