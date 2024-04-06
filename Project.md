@@ -1,9 +1,10 @@
-# TEMPERATURE SENSING AND CONTROLLING
+# Mixedd Signal VLSI Design
 
 
-## Group 11: 
-            EE23MT017 Sahil Bagade;   EE23MT017@gmail.com            
-            EE23Mt008 JAYASURIYA T J  EE23MT008@gmail.com
+## Group  
+            EE23MT011 Kaushik Powar; EE23MT011@iitdh.ac.in
+            EE23MT017 Sahil Bagade;  EE23MT017@iitdh.ac.in            
+            
 
 ## Aim: 
             Design a 6 bit 2 step Flash ADC [3 bit + 3 bit]
@@ -31,16 +32,24 @@ S/H Circuit
 
 
 
-##Challenges 
+## Challenges 
 
             S/H Circuit
             
-            First the s/h circuit we used was the bottom plate sampling, the problem we faced while using the bottom plate sampling was the output we got was 
+            First the s/h circuit used was the bottom plate sampling, the problem with using the bottom plate sampling was the output we got was 
 
             After replacing bottom plate sampling ckt with the transmission gate, at the output, the capacitor was charging slowly when the capacitor of 1u F was connected and there were errors when the
-            1f F was connected.
+            1f F was connected. 
+
+            The second S/H circuit is used to reduce the noise of the substractor output
+
+            Differential Amplifier
+
+            The problem with the differential amplifier was the gain we were getting was different for different inputs.
+            This problem was solved by replacing the differential amplifier with the ideal with the gain of 4.
 
             3 Bit ADC
+            
 
             3 Bit DAC
 
@@ -59,8 +68,7 @@ S/H Circuit
 
 ## Results:
 
-We have to sense the temperature of a resistor using an LM35 temperature sensor. And we have to control the temperature of a resistor using a switch. 
-The  temperature sensing is done by controlling the current in the Temperature sensing module using a switch of the microcontroller, where we have used the LM35 sensor to detect the rise in temperature and sent the data to the microcontroller
+
 
 
 
