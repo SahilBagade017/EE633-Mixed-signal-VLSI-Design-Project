@@ -47,7 +47,7 @@
 
 ## Challenges 
 
-            ## S/H Circuit
+ ## S/H Circuit
             
             First the s/h circuit used was the bottom plate sampling, the problem with using the bottom plate sampling was the output had error due to charge injection.
 
@@ -63,14 +63,14 @@
             The problem with the differential amplifier was the gain we were getting was different for different inputs.
             This problem was solved by replacing the differential amplifier with the ideal with the gain of 4.
 
-            3 Bit ADC
+## 3 Bit ADC
             
             Initially we took 14um/28um mosfet width which gave an error while testing, we reduced it to 1um/2um.
             Sense comparator was introducing kickback noises in ADC Vref level therefore preamplifiers were added in the circuits
             The pre amp that was near to the ground was giving errors because they were nmos preamps , so we replaced preamps near ground with pmos preamps
             
             
-            3 Bit DAC
+## 3 Bit DAC
 
             The voltage we got at the nodes was not the same as expected.First we used nmos and pmos in parallel, The problem with that circuit was the mos resistance  which was hard to compaensate
             ,due to which the division of voltage was not proper, the expected division was Vref/2 , Vref/4 , Vref/8.This problem was rectified by replacing the switch with two nmos in parallel and 
