@@ -30,11 +30,11 @@
 
 <img src="3bitDAC.png" alt="3bitDAC" height="450" width="550"/>
 
-                        Comparator
+                        Latch
 
 <img src="comparator.png" alt="3bitDAC" height="450" width="550"/>
 
-                        Latch
+                        Comparator
 
 <img src="sense.png" alt="3bitDAC" height="450" width="550"/>
 
@@ -48,9 +48,11 @@
             After replacing bottom plate sampling ckt with the transmission gate, at the output, the capacitor was charging slowly when the capacitor of 1u F was connected and there were errors when the
             1f F was connected and the noise was getting introduced.
 
-            The second S/H circuit is used to reduce the noise of the substractor output
+            The second S/H circuit is used to reduce the noise of the substractor output.
             
             The clk in second s/h is delayed by 1.7n.
+
+            Finally the S/H circuit used was Bottom plate sampling beacuse the practically transmission gate are not used and other s/h circuits are preferred.
 
             Differential Amplifier
 
