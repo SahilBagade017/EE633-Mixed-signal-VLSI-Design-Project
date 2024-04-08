@@ -20,7 +20,7 @@
 ## Sub Circuit 
                         S/H Circuit
 
-<img src="images/Transmission Gate.png" alt="S/H Circuit" height="450" width="550"/>
+<img src="images/bootstrap.png" alt="S/H Circuit" height="450" width="550"/>
 
                         3 bit ADC
 
