@@ -30,6 +30,17 @@
 
 <img src="images/3bitDAC.png" alt="3bitDAC" height="450" width="550"/>
 
+                        Sense
+
+<img src="images/sense.png" alt="3bitDAC" height="450" width="550"/>
+
+                        Comparator
+
+<img src="images/comparator.png" alt="3bitDAC" height="450" width="550"/>
+
+
+
+
                         
 
 
