@@ -5,7 +5,7 @@
             EE23MT011 Kaushik Powar; EE23MT011@iitdh.ac.in
             EE23MT017 Sahil Bagade;  EE23MT017@iitdh.ac.in            
             
-
+        
 ## Aim: 
             Design a 6 bit 2 step Flash ADC [3 bit + 3 bit]
 
@@ -18,7 +18,7 @@
     
     
 ## Sub Circuit 
-                        S/H Circuit
+                        Bootstrap S/H Circuit
 
 <img src="images/bootstrap.png" alt="S/H Circuit" height="450" width="550"/>
 
