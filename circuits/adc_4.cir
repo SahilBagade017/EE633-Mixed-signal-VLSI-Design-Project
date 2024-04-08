@@ -1,0 +1,109 @@
+***** sub circuit for 4 bit flash adc
+
+.subckt adc_4 vdd gnd nmos_bias clk adc_in adc_out_bit0 adc_out_bit1 adc_out_bit2 adc_out_bit3
+
+
+******* Resistor ladder *************************************************
+**** for Vrefs in 4 bit adc
+
+R1 vdd ADC_vref15 1k
+R2 ADC_vref15 ADC_vref14 1k
+R3 ADC_vref14 ADC_vref13 1k
+R4 ADC_vref13 ADC_vref12 1k
+R5 ADC_vref12 ADC_vref11 1k
+R6 ADC_vref11 ADC_vref10 1k
+R7 ADC_vref10 ADC_vref9 1k
+R8 ADC_vref9 ADC_vref8 1k
+R9 ADC_vref8 ADC_vref7 1k
+R10 ADC_vref7 ADC_vref6 1k
+R11 ADC_vref6 ADC_vref5 1k
+R12 ADC_vref5 ADC_vref4 1k
+R13 ADC_vref4 ADC_vref3 1k
+R14 ADC_vref3 ADC_vref2 1k
+R15 ADC_vref2 ADC_vref1 1k
+R16 ADC_vref1 gnd 1k
+
+******************preamps in ADC ************************************
+
+xpre_amp1 vdd gnd nmos_bias ADC_vref1 adc_in senseIN_pos1 senseIN_neg1 pmos_preamp  // p-mosfet is biased by 0.9V ( nmos bias= 0.9V) 
+xpre_amp2 vdd gnd nmos_bias ADC_vref2 adc_in senseIN_pos2 senseIN_neg2 pmos_preamp  //
+xpre_amp3 vdd gnd nmos_bias ADC_vref3 adc_in senseIN_pos3 senseIN_neg3 pmos_preamp  // 
+xpre_amp4 vdd gnd nmos_bias ADC_vref4 adc_in senseIN_pos4 senseIN_neg4 preamp
+xpre_amp5 vdd gnd nmos_bias ADC_vref5 adc_in senseIN_pos5 senseIN_neg5 preamp
+xpre_amp6 vdd gnd nmos_bias ADC_vref6 adc_in senseIN_pos6 senseIN_neg6 preamp
+xpre_amp7 vdd gnd nmos_bias ADC_vref7 adc_in senseIN_pos7 senseIN_neg7 preamp
+xpre_amp8 vdd gnd nmos_bias ADC_vref8 adc_in senseIN_pos8 senseIN_neg8 preamp
+xpre_amp9 vdd gnd nmos_bias ADC_vref9 adc_in senseIN_pos9 senseIN_neg9 preamp
+xpre_amp10 vdd gnd nmos_bias ADC_vref10 adc_in senseIN_pos10 senseIN_neg10 preamp
+xpre_amp11 vdd gnd nmos_bias ADC_vref11 adc_in senseIN_pos11 senseIN_neg11 preamp
+xpre_amp12 vdd gnd nmos_bias ADC_vref12 adc_in senseIN_pos12 senseIN_neg12 preamp
+xpre_amp13 vdd gnd nmos_bias ADC_vref13 adc_in senseIN_pos13 senseIN_neg13 preamp
+xpre_amp14 vdd gnd nmos_bias ADC_vref14 adc_in senseIN_pos14 senseIN_neg14 preamp
+xpre_amp15 vdd gnd nmos_bias ADC_vref15 adc_in senseIN_pos15 senseIN_neg15 preamp
+
+************** comparators in ADC ***********************************
+xSlatch15 vdd gnd clk senseIN_pos15 senseIN_neg15 Slatch15_out Slatch
+xSlatch14 vdd gnd clk senseIN_pos14 senseIN_neg14 Slatch14_out Slatch
+xSlatch13 vdd gnd clk senseIN_pos13 senseIN_neg13 Slatch13_out Slatch
+xSlatch12 vdd gnd clk senseIN_pos12 senseIN_neg12 Slatch12_out Slatch
+xSlatch11 vdd gnd clk senseIN_pos11 senseIN_neg11 Slatch11_out Slatch
+xSlatch10 vdd gnd clk senseIN_pos10 senseIN_neg10 Slatch10_out Slatch
+xSlatch9 vdd gnd clk senseIN_pos9 senseIN_neg9 Slatch9_out Slatch
+xSlatch8 vdd gnd clk senseIN_pos8 senseIN_neg8 Slatch8_out Slatch
+xSlatch7 vdd gnd clk senseIN_pos7 senseIN_neg7 Slatch7_out Slatch
+xSlatch6 vdd gnd clk senseIN_pos6 senseIN_neg6 Slatch6_out Slatch
+xSlatch5 vdd gnd clk senseIN_pos5 senseIN_neg5 Slatch5_out Slatch
+xSlatch4 vdd gnd clk senseIN_pos4 senseIN_neg4 Slatch4_out Slatch
+xSlatch3 vdd gnd clk senseIN_pos3 senseIN_neg3 Slatch3_out Slatch
+xSlatch2 vdd gnd clk senseIN_pos2 senseIN_neg2 Slatch2_out Slatch
+xSlatch1 vdd gnd clk senseIN_pos1 senseIN_neg1 Slatch1_out Slatch
+
+******** XOR gates for bubble output *******************************
+xXOR1 vdd gnd Slatch1_out vdd bubble_1 XOR_bubble
+xXOR2 vdd gnd Slatch2_out Slatch1_out bubble_2 XOR_bubble
+xXOR3 vdd gnd Slatch3_out Slatch2_out bubble_3 XOR_bubble
+xXOR4 vdd gnd Slatch4_out Slatch3_out bubble_4 XOR_bubble
+xXOR5 vdd gnd Slatch5_out Slatch4_out bubble_5 XOR_bubble
+xXOR6 vdd gnd Slatch6_out Slatch5_out bubble_6 XOR_bubble
+xXOR7 vdd gnd Slatch7_out Slatch6_out bubble_7 XOR_bubble
+xXOR8 vdd gnd Slatch8_out Slatch7_out bubble_8 XOR_bubble
+xXOR9 vdd gnd Slatch9_out Slatch8_out bubble_9 XOR_bubble
+xXOR10 vdd gnd Slatch10_out Slatch9_out bubble_10 XOR_bubble
+xXOR11 vdd gnd Slatch11_out Slatch10_out bubble_11 XOR_bubble
+xXOR12 vdd gnd Slatch12_out Slatch11_out bubble_12 XOR_bubble
+xXOR13 vdd gnd Slatch13_out Slatch12_out bubble_13 XOR_bubble
+xXOR14 vdd gnd Slatch14_out Slatch13_out bubble_14 XOR_bubble
+xXOR15 vdd gnd Slatch15_out Slatch14_out bubble_15 XOR_bubble
+xXOR16 vdd gnd gnd Slatch15_out bubble_16 XOR_bubble
+
+************************** ENCODER ************************************************
+
+***** inverting the XOR outputs
+xin1 vdd gnd bubble_1 bubble_1bar inv
+xin2 vdd gnd bubble_2 bubble_2bar inv
+xin3 vdd gnd bubble_3 bubble_3bar inv
+xin4 vdd gnd bubble_4 bubble_4bar inv
+xin5 vdd gnd bubble_5 bubble_5bar inv
+xin6 vdd gnd bubble_6 bubble_6bar inv
+xin7 vdd gnd bubble_7 bubble_7bar inv
+xin8 vdd gnd bubble_8 bubble_8bar inv
+xin9 vdd gnd bubble_9 bubble_9bar inv
+xin10 vdd gnd bubble_10 bubble_10bar inv
+xin11 vdd gnd bubble_11 bubble_11bar inv
+xin12 vdd gnd bubble_12 bubble_12bar inv
+xin13 vdd gnd bubble_13 bubble_13bar inv
+xin14 vdd gnd bubble_14 bubble_14bar inv
+xin15 vdd gnd bubble_15 bubble_15bar inv
+xin16 vdd gnd bubble_16 bubble_16bar inv
+
+*************************************
+
+***** feed inverted xor outputs to or_8ip
+xbit_0 vdd gnd bubble_2bar bubble_4bar bubble_6bar bubble_8bar bubble_10bar bubble_12bar bubble_14bar bubble_16bar adc_out_bit0 or8_INbar  //LSB bit
+xbit_1 vdd gnd bubble_3bar bubble_4bar bubble_7bar bubble_8bar bubble_11bar bubble_12bar bubble_15bar bubble_16bar adc_out_bit1 or8_INbar //1st bit
+xbit_2 vdd gnd bubble_5bar bubble_6bar bubble_7bar bubble_8bar bubble_13bar bubble_14bar bubble_15bar bubble_16bar adc_out_bit2 or8_INbar //2nd bit
+xbit_3 vdd gnd bubble_9bar bubble_10bar bubble_11bar bubble_12bar bubble_13bar bubble_14bar bubble_15bar bubble_16bar adc_out_bit3 or8_INbar //MSB bit
+
+.ends
+
+.END

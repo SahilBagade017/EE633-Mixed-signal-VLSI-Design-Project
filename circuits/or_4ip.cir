@@ -1,0 +1,16 @@
+*****  4 input OR_gate transistor realization for encoder
+
+
+.subckt or_INbar vdd gnd OR4_IN1bar OR4_IN2bar OR4_IN3bar OR4_IN4bar OR4_out  
+M1p OR4_out OR4_IN1bar vdd vdd CMOSP W=2U L=0.18U
+M2p OR4_out OR4_IN2bar vdd vdd CMOSP W=2U L=0.18U
+M3p OR4_out OR4_IN3bar vdd vdd CMOSP W=2U L=0.18U
+M4p OR4_out OR4_IN4bar vdd vdd CMOSP W=2U L=0.18U
+
+M1n OR4_out OR4_IN1bar 1 gnd CMOSN W=2U L=0.18U
+M2n 1 OR4_IN2bar 2 gnd CMOSN W=2U L=0.18U
+M3n 2 OR4_IN3bar 3 gnd CMOSN W=2U L=0.18U
+M4n 3 OR4_IN4bar gnd gnd CMOSN W=2U L=0.18U
+
+.ends
+.end

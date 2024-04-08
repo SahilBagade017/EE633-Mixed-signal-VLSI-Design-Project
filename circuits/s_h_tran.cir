@@ -1,0 +1,12 @@
+**** sample and hold :transmission gate
+
+.subckt s_h_tran gnd clk clk_bar vin out 
+
+M1n out clk vin vin CMOSN W=10U L=0.18U
+M1p vin clk_bar out out CMOSP W=10U L=0.18U
+
+Csample out gnd 1p
+
+.ends
+
+.END

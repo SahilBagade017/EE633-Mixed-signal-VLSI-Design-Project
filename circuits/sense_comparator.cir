@@ -1,0 +1,27 @@
+***SENSE Comparator
+
+*********** SENSE COMPARATOR subcircuit ***************
+
+.subckt S_Comparator vdd gnd clk IN1 IN2 Sbar Rbar
+
+* IN1 side inverter 
+M2p Sbar Rbar vdd vdd CMOSP L=0.18U W=1U
+M1n Sbar Rbar 1 gnd CMOSN L=0.18U W=1U
+
+* IN2 side inverter 
+M3p Rbar Sbar vdd vdd CMOSP L=0.18U W=1U
+M2n Rbar Sbar 2 gnd CMOSN L=0.18U W=1U
+
+* input MOS
+M3n 1 IN1 3 gnd CMOSN L=0.18U W=2U // in1 mosfet
+M4n 2 IN2 3 gnd CMOSN L=0.18U W=2U // in2 mosfet
+
+*clocked MOSs
+M1p Sbar clk vdd vdd CMOSP L=0.18U W=1U
+M4p Rbar clk vdd vdd CMOSP L=0.18U W=1U
+M5n 3 clk gnd gnd CMOSN L=0.18U W=2U
+.ends
+
+*****************************************************************
+
+.END

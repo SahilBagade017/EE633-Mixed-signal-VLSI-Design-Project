@@ -1,0 +1,24 @@
+*****  8 input OR_gate transistor realization for encoder
+
+
+.subckt or8_INbar vdd gnd OR8_IN1bar OR8_IN2bar OR8_IN3bar OR8_IN4bar OR8_IN5bar OR8_IN6bar OR8_IN7bar OR8_IN8bar OR8_out  
+M1p OR8_out OR8_IN1bar vdd vdd CMOSP W=2U L=0.18U
+M2p OR8_out OR8_IN2bar vdd vdd CMOSP W=2U L=0.18U
+M3p OR8_out OR8_IN3bar vdd vdd CMOSP W=2U L=0.18U
+M4p OR8_out OR8_IN4bar vdd vdd CMOSP W=2U L=0.18U
+M5p OR8_out OR8_IN5bar vdd vdd CMOSP W=2U L=0.18U
+M6p OR8_out OR8_IN6bar vdd vdd CMOSP W=2U L=0.18U
+M7p OR8_out OR8_IN7bar vdd vdd CMOSP W=2U L=0.18U
+M8p OR8_out OR8_IN8bar vdd vdd CMOSP W=2U L=0.18U
+
+M1n OR8_out OR8_IN1bar 1 gnd CMOSN W=2U L=0.18U
+M2n 1 OR8_IN2bar 2 gnd CMOSN W=2U L=0.18U
+M3n 2 OR8_IN3bar 3 gnd CMOSN W=2U L=0.18U
+M4n 3 OR8_IN4bar 4 gnd CMOSN W=2U L=0.18U
+M5n 4 OR8_IN5bar 5 gnd CMOSN W=2U L=0.18U
+M6n 5 OR8_IN6bar 6 gnd CMOSN W=2U L=0.18U
+M7n 6 OR8_IN7bar 7 gnd CMOSN W=2U L=0.18U
+M8n 7 OR8_IN8bar gnd gnd CMOSN W=2U L=0.18U
+
+.ends
+.end

@@ -1,0 +1,8 @@
+***CMOS Inverter
+
+.subckt inv vdd gnd in out
+Mp out in vdd vdd CMOSP W=1U L=0.18U
+Mn out in gnd gnd CMOSN W=1U L=0.18U
+.ends
+
+.END

@@ -1,0 +1,16 @@
+*** bubble_XOR
+
+********************** XOR realization subcircuit ***************************
+
+.subckt XOR_bubble vdd gnd XOR_IN1 XOR_IN2 XOR_OUT
+xinv1 vdd gnd XOR_IN2 XOR_IN2bar inv
+
+M1p 1 XOR_IN1 vdd vdd CMOSP W=2U L=0.18U
+M2p XOR_out XOR_IN2bar 1 vdd CMOSP W=2U L=0.18U
+M1n XOR_out XOR_IN1 gnd gnd CMOSN W=2U L=0.18U
+M2n XOR_out XOR_IN2bar gnd gnd CMOSN W=2U L=0.18U
+.ends
+
+******************************************************************************
+
+.END

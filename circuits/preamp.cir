@@ -1,0 +1,16 @@
+******* preamp
+
+***************** subcircuit for pre amplifier *****************
+ .subckt preamp vdd gnd nmos_bias vref adc_in out_posi out_neg	
+
+
+M1p out_neg out_neg vdd vdd CMOSP W=1U L=0.18U
+M2p out_posi out_posi vdd vdd CMOSP W=1U L=0.18U
+
+M1n out_neg adc_in 1 gnd CMOSN W=1U L=0.18U
+M2n out_posi vref 1 gnd CMOSN W=1U L=0.18U
+
+M3n 1 nmos_bias gnd gnd CMOSN W=1U L=0.18U
+.ends
+****************************************************************
+.END

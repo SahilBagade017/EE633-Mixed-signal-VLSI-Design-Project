@@ -1,0 +1,16 @@
+***** pmos preamp
+
+.subckt pmos_preamp vdd gnd pmos_bias vref adc_in out_posi out_neg
+
+
+M1p 1 pmos_bias vdd vdd CMOSP W=1U L=0.18U
+
+M2p out_neg adc_in 1 vdd CMOSP W=1U L=0.18U
+M3p out_posi vref 1 vdd CMOSP W=1U L=0.18U
+
+M1n out_neg out_neg gnd gnd CMOSN W=1U L=0.18U
+M2n out_posi out_posi gnd gnd CMOSN W=1U L=0.18U
+
+.ends
+
+.END

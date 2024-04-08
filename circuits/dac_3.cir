@@ -1,0 +1,43 @@
+******** R/2R DAC 
+******** 2 nmos switches in parallel are used, one of them is ON at each instant 
+
+.subckt dac_3 vdd gnd dac_in_bit0 dac_in_bit1 dac_in_bit2 dac_out
+
+xinv0 vdd gnd dac_in_bit0 dac_in_bit0bar inv  //  inverted gate signals for the the nmos parallel switches
+xinv1 vdd gnd dac_in_bit1 dac_in_bit1bar inv  //
+xinv2 vdd gnd dac_in_bit2 dac_in_bit2bar inv  //
+
+
+************ R/2R DAC ********************************************************************************************************
+R1_1 vdd 3 1k
+Mn_dummy1 vref3 vdd 3 3 CMOSN W=14U L=0.18U   // dummy transistor to compensate for switch resistance, pmos is used to pass voltage
+
+R1_2 vref3 2 1k
+Mn_dummy2 vref2 vdd 2 2 CMOSN W=14U L=0.18U   // dummy transistor to compensate for switch resistance, nmos is used to pass voltage
+
+R1_3 vref2 1 1k
+Mn_dummy3 vref1 vdd 1 1 CMOSN W=14U L=0.18U   // dummy transistor to compensate for switch resistance, nmos is used to pass voltage
+
+R2_3 vref3 sw3_in 2k
+R2_2 vref2 sw2_in 2k
+R2_1 vref1 sw1_in 2k
+R2_0 vref1 4 2k
+Mn_dummy4 4 vdd gnd gnd CMOSN W=7U L=0.18U   
+
+Mn_sw3_1 sw3_in dac_in_bit2 opamp_in opamp_in CMOSN W=7U L=0.18U
+Mn_sw3_2 sw3_in dac_in_bit2bar gnd gnd CMOSN W=7U L=0.18U
+
+Mn_sw2_1 sw2_in dac_in_bit1 opamp_in opamp_in CMOSN W=7U L=0.18U
+Mn_sw2_2 sw2_in dac_in_bit1bar gnd gnd CMOSN W=7U L=0.18U
+
+Mn_sw1_1 sw1_in dac_in_bit0 opamp_in opamp_in CMOSN W=7U L=0.18U
+Mn_sw1_2 sw1_in dac_in_bit0bar gnd gnd CMOSN W=7U L=0.18U
+
+******************implementing op-amp using  ideal IcVs ********
+
+Vdummy opamp_in gnd 0
+Hopamp amp_in gnd Vdummy 1
+Eamp dac_out gnd amp_in gnd 2353		// amplifying the output of IcVs
+.ends
+.END
+

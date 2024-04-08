@@ -1,0 +1,24 @@
+*** Clocked Comparator
+
+.subckt Slatch vdd gnd clk IN1 IN2 Q
+xScomp vdd gnd clk IN1 IN2 Sbar Rbar S_Comparator 	// Sense Comparator instance
+xinv1 vdd gnd Sbar S inv 				//
+xinv2 vdd gnd Rbar R inv 				// inverter instances
+
+**** SENSE Latch
+M1p Q Sbar vdd vdd CMOSP W=5U L=0.18U			
+M2p 1 R vdd vdd CMOSP W=5U L=0.18U
+M3p 2 S vdd vdd CMOSP W=5U L=0.18U
+M4p Qbar Rbar vdd vdd CMOSP W=5U L=0.18U
+M5p Q Qbar 1 vdd CMOSP W=5U L=0.18U
+M6p Qbar Q 2 vdd CMOSP W=5U L=0.18U
+
+M1n Q Qbar 3 gnd CMOSN W=5U L=0.18U
+M2n Qbar Q 4 gnd CMOSN W=5U L=0.18U
+M3n Q R gnd gnd CMOSN W=5U L=0.18U
+M4n 3 Sbar gnd gnd CMOSN W=5U L=0.18U
+M5n 4 Rbar gnd gnd CMOSN W=5U L=0.18U
+M6n Qbar S gnd gnd CMOSN W=5U L=0.18U
+.ends
+
+.END
