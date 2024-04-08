@@ -58,10 +58,12 @@
             
             The clk in second s/h is delayed by 1.7n.
 
-                        Differential Amplifier
+             Finally the S/H circuit used was Bottom plate sampling beacuse the practically transmission gate are not used and other s/h circuits are preferred.
+
+                        Differential Amplifier and Substractor
 
             The problem with the differential amplifier was the gain we were getting was different for different inputs.
-            This problem was solved by replacing the differential amplifier with the ideal with the gain of 4.
+            This problem was solved by replacing the differential amplifier with the vcvs with the gain of 4.
 
                         3 Bit ADC
             
@@ -76,7 +78,7 @@
             ,due to which the division of voltage was not proper, the expected division was Vref/2 , Vref/4 , Vref/8.This problem was rectified by replacing the switch with two nmos in parallel and 
             conntecting inverter to the gate of nmos and its  source is connected to ground. So that when the input 0 is given to dac inverted nmos will be turned on and it will be shorted to ground.
 
-            Ideal opamp was implemented using IcVs
+            Ideal opamp was implemented using VcVs
 
             
 
