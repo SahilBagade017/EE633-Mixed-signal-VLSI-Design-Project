@@ -47,7 +47,7 @@
 
 ## Challenges 
 
-            S/H Circuit
+            ## S/H Circuit
             
             First the s/h circuit used was the bottom plate sampling, the problem with using the bottom plate sampling was the output had error due to charge injection.
 
