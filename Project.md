@@ -12,7 +12,7 @@
 ## Circuit Block Diagram 
 
  
-<img src="Blockdiag.png" alt="Block Diagram" height="550" width="750"/>
+<img src="images/Blockdiag.png" alt="Block Diagram" height="550" width="750"/>
 
     
     
@@ -20,15 +20,17 @@
 ## Sub Circuit 
                         S/H Circuit
 
-<img src="Transmission Gate.png" alt="S/H Circuit" height="450" width="550"/>
+<img src="images/Transmission Gate.png" alt="S/H Circuit" height="450" width="550"/>
 
                         3 bit ADC
 
-<img src="3bitADC.png" alt="3bitADC" height="450" width="550"/>
+<img src="images/3bitADC.png" alt="3bitADC" height="450" width="550"/>
 
                         3 bit DAC
 
-<img src="3bitDAC.png" alt="3bitDAC" height="450" width="550"/>
+<img src="images/3bitDAC.png" alt="3bitDAC" height="450" width="550"/>
+
+                        
 
 
 
