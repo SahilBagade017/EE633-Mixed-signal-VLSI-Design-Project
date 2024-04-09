@@ -47,7 +47,7 @@
 
 ## Challenges 
 
-            First, the s/h circuit used was the bottom plate sampling, the problem with using the bottom plate sampling was the output had an error due to charge injection.
+            First, the s/h circuit used was the bottom plate sampling, the problem with using the bottom plate sampling was the output had an error due to charge injection/clock feedthrough.
 
             After replacing the bottom plate sampling ckt with the transmission gate, at the output, the capacitor was charging slowly when the capacitor of 1u F was connected and there were errors when the
             1f F was connected and the noise was getting introduced.
