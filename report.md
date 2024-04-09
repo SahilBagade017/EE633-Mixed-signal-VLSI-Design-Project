@@ -7,7 +7,7 @@
             
         
 ## Aim: 
-            Design a 6 bit 2 step Flash ADC [3 bit + 3 bit]
+            Design a 6 bit 2 step Flash ADC, using 3 bit ADC in first step and 4 bit ADC in second step.
 
 ## Circuit Block Diagram 
 
